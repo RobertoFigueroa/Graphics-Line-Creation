@@ -90,44 +90,44 @@ class Render(object):
 		archivo.close()
 
 	#class implementation
-	# def glLine(self, x0, y0, x1, y1):
-	# 	x0 = round(( x0 + 1) * (self.viewportWidth  / 2 ) + self.viewportX)
-	# 	x1 = round(( x1 + 1) * (self.viewportWidth  / 2 ) + self.viewportX)
-	# 	y0 = round(( y0 + 1) * (self.viewportHeight / 2 ) + self.viewportY)
-	# 	y1 = round(( y1 + 1) * (self.viewportHeight / 2 ) + self.viewportY)
+	def glLine(self, x0, y0, x1, y1):
+		x0 = round(( x0 + 1) * (self.viewportWidth  / 2 ) + self.viewportX)
+		x1 = round(( x1 + 1) * (self.viewportWidth  / 2 ) + self.viewportX)
+		y0 = round(( y0 + 1) * (self.viewportHeight / 2 ) + self.viewportY)
+		y1 = round(( y1 + 1) * (self.viewportHeight / 2 ) + self.viewportY)
 
-	# 	dx = abs(x1 - x0)
-	# 	dy = abs(y1 - y0)
+		dx = abs(x1 - x0)
+		dy = abs(y1 - y0)
 
-	# 	steep = dy > dx
+		steep = dy > dx
 
-	# 	if steep:
-	# 		x0, y0 = y0, x0
-	# 		x1, y1 = y1, x1
+		if steep:
+			x0, y0 = y0, x0
+			x1, y1 = y1, x1
 
-	# 	if x0 > x1:
-	# 		x0, x1 = x1, x0
-	# 		y0, y1 = y1, y0
+		if x0 > x1:
+			x0, x1 = x1, x0
+			y0, y1 = y1, y0
 
-	# 	dx = abs(x1 - x0)
-	# 	dy = abs(y1 - y0)
+		dx = abs(x1 - x0)
+		dy = abs(y1 - y0)
 
-	# 	offset = 0
-	# 	limit = 0.5
+		offset = 0
+		limit = 0.5
 
-	# 	m = dy/dx
-	# 	y = y0
+		m = dy/dx
+		y = y0
 
-	# 	for x in range(x0, x1 + 1):
-	# 		if steep:
-	# 			self.glVertex_coord(y, x)
-	# 		else:
-	# 			self.glVertex_coord(x, y)
+		for x in range(x0, x1 + 1):
+			if steep:
+				self.glVertex_coord(y, x)
+			else:
+				self.glVertex_coord(x, y)
 
-	# 		offset += m
-	# 		if offset >= limit:
-	# 			y += 1 if y0 < y1 else -1
-	# 			limit += 1
+			offset += m
+			if offset >= limit:
+				y += 1 if y0 < y1 else -1
+				limit += 1
 
 	#Homework implementation
 	#Reference: http://www.dgp.toronto.edu/~karan/courses/csc418/lectures/BRESENHAM.HTML
